@@ -4,3 +4,9 @@ const add = (x: number, y: number): string => {
 }
 
 add(8, 6);
+
+const minus = (a: number, b: number) => {
+    console.log(a - b);
+}
+
+minus(8, 6);
