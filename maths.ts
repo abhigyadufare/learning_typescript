@@ -19,3 +19,11 @@ const multiply = (m: number, n: number) => {
 }
 
 multiply(8, 6);
+
+
+const remainder = (u: number, t: number) => {
+    console.log(`Remainder of ${u} diveded by ${t} is ${u % t}`);
+    return u % t;
+}
+
+remainder(75, 9);
