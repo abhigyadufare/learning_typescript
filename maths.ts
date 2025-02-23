@@ -21,6 +21,14 @@ const multiply = (m: number, n: number) => {
 multiply(8, 6);
 
 
+const divide = (g: number, h: number) => {
+    console.log(`Division of ${g} with ${h} gives you ${g / h}`);
+    return g / h;
+}
+
+divide(8, 6);
+
+
 const remainder = (u: number, t: number) => {
     console.log(`Remainder of ${u} diveded by ${t} is ${u % t}`);
     return u % t;
