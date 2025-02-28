@@ -44,3 +44,37 @@ console.log(myArray); // Output: [1, 3, 4]
 // Remove the last item from the array
 myArray = manageArray(myArray, "remove");
 console.log(myArray); // Output: [1, 3]
+
+
+function calculateLCM(a: number, b: number): number {
+    // Helper function to calculate the Greatest Common Divisor (GCD) using Euclidean algorithm
+    function calculateGCD(x: number, y: number): number {
+        while (y !== 0) {
+            const temp = y;
+            y = x % y;
+            x = temp;
+        }
+        return x;
+    }
+
+    // Calculate LCM using the formula: LCM(a, b) = (a * b) / GCD(a, b)
+    return (a * b) / calculateGCD(a, b);
+}
+
+function findCommonMultiples(a: number, b: number, limit: number): number[] {
+    const lcm = calculateLCM(a, b); // Use the LCM function from above
+    const commonMultiples: number[] = [];
+
+    for (let i = lcm; i <= limit; i += lcm) {
+        commonMultiples.push(i);
+    }
+
+    return commonMultiples;
+}
+
+// Example usage:
+const num1 = 4;
+const num2 = 6;
+const limit = 50; // Find common multiples up to 50
+const multiples = findCommonMultiples(num1, num2, limit);
+console.log(`Common multiples of ${num1} and ${num2} up to ${limit}:`, multiples);
